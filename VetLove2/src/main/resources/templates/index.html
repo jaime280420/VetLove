@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulario de Registro de Usuario</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #00bfff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #009acd;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+</style>
+<script>
+    function validateForm() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm_password").value;
+
+      if (password !== confirmPassword) {
+        document.getElementById("error-message").innerText = "Las contraseñas no coinciden";
+        return false;
+      }
+
+      return true;
+    }
+</script>
+</head>
+<body>
+<div class="container">
+<h2>Registro de Usuario</h2>
+<div>
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS82xR1LktDgvn7cNfjPksAjS9qKziGnduJPlmQbrJMEJFoJfFh" alt="Logo de Vetelove">
+<form onsubmit="return validateForm()">
+<p>Bienvenido a Vetelove. Rellena los datos para poder registrarte y entrar a nuestra página.</p>
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="email" name="email" placeholder="Correo electrónico" required>
+<input type="password" name="password" id="password" placeholder="Contraseña" required>
+<input type="password" name="confirm_password" id="confirm_password" placeholder="Repetir contraseña" required>
+<label>
+<input type="checkbox" name="accept_terms" required>
+          Acepto los términos y condiciones
+</label>
+<input type="submit" value="Registrarse">
+<div id="error-message" class="error-message"></div>
+</form>
+</div>
+</div>
+</body>
+</html>
