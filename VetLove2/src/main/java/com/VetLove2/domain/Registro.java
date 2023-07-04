@@ -17,17 +17,16 @@ public class Registro implements Serializable {
     private String email;
     private String contrasena;
     private String repetirContrasena;
-    private boolean activos;
 
     public Registro() {
     }
 
-    public Registro(String nombre, String email, String contrasena, String repetirContrasena, boolean activos) {
+    public Registro(String nombre, String email, String contrasena, String repetirContrasena) {
         this.nombre = nombre;
         this.email = email;
         this.contrasena = contrasena;
         this.repetirContrasena = repetirContrasena;
-        this.activos = activos;
+        
     }
 
 }
